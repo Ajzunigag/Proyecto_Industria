@@ -1,0 +1,44 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container-fluid">
+
+  <div class="row contenido">
+    <div class="row titulo">
+      <h3>Registrar Plan</h3>
+    </div>
+    <div class="datosPlan">
+      <form [formGroup]="formularioPlan">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <td scope="col"></td>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Nombre</td>
+              <td><input class="datoPlan" formControlName="nombre" type="text"></td>
+            </tr>
+            <tr>
+              <td scope="row">Descripción</td>
+              <td><input class="datoPlan" formControlName="desc" type="text"></td>
+            </tr>
+            <tr>
+              <td scope="row">Maximo de articulos</td>
+              <td><input formControlName="maxA" class="cPlan" type="number" min="1" max="100"></td>
+            </tr>
+            <tr>
+              <td scope="row">Estadísticas (Si/No)</td>
+              <td><input formControlName="estadísticas" class="datoPlan" type="text"></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div>
+    <div class="row boton justify-content-center">
+      <button class="btn btn-success btnNuevo" (click)="nuevoPlan()">Registrar</button>
+    </div>
+  </div>
+
+</div>
+<div class="pie"><br></div>

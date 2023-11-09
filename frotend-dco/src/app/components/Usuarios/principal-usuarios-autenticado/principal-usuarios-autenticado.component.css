@@ -1,0 +1,267 @@
+.contenedor{
+    background-color: #ECFBFF;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacion{
+    background-color: #184E5D;
+    flex: 1;
+}
+
+.contenido-principal{
+    background-color: #ECFBFF;
+    
+    height: 90vh;
+}
+
+.contenedor-nav{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-l{
+   flex: 1;
+   display: flex;
+   align-items: center;
+   justify-content: space-evenly;
+}
+
+.contenedor-navl{
+    flex: 2;
+}
+.seleccion{
+    width: 20px;
+    margin-left: 5px;
+    background-color: #184E5D;
+    border: none;
+    color: #EFEFEF;
+}
+
+.logo{
+    height: 88%;
+    width: 42%;
+    margin-left: 50px;
+}
+
+.nav-c{
+    flex: 2.7;
+    background-color: #184E5D; 
+    align-items: center;
+    justify-content: center;  
+}
+.contenedor-formulario{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.formulario{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.buscador{
+    width: 90%;
+    padding: 10px 5px;
+    padding-right: 0px!important;
+    margin: 5px 5px;
+    margin-right: 0px;
+    background-color: #ECFBFF;
+    padding-left: 25px;
+    font-weight: bolder;
+    font-size: medium;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #184E5D!important;
+}
+
+.buscador::placeholder{
+    color: #184E5D;
+}
+.buscador:focus-visible{
+    border: none;
+    outline: none;
+}
+
+.logo-search{
+    width: 30px;
+    height: 30px;
+    color: #184E5D;
+    
+}
+
+.buscador-btn{
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    text-align: center;
+    align-content: center;
+    background-color: #ECFBFF;
+    border-color: #ECFBFF;
+    height: 46px;
+}
+
+.buscador-btn:hover{
+    cursor: pointer;
+}
+
+.contenedor-btn-search{
+    flex: 1;
+   
+}
+
+.contenedor-search{
+    flex: 100;
+    display: flex;
+    align-items: center;
+}
+
+.nav-r{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: larger;
+    color: #ECFBFF;
+}
+
+.contenedor-r{
+    flex: 1;
+    height: 25px;
+    width: 50%;
+}
+
+.correccion-contenedor-r{
+    width: 70%;
+    height: 20%;
+    color: #ECFBFF!important;
+}
+
+.boton-comprar{
+    background-color: #184E5D;
+    color: #ECFBFF;
+}
+
+.correccion-btn{
+    position: absolute;
+    width: 70px;
+    background-color: #184E5D!important;
+    border: none;
+}
+
+.correccion-btn:focus{
+    border-color: #ECFBFF;
+}
+
+.svg{
+    width: 100%;
+    height: 100%;
+    color: #ECFBFF!important;
+}
+
+.path{
+    fill: #ECFBFF!important;
+}
+.btn-r{
+    flex: 1;
+}
+
+.color{
+    color: #EFEFEF;
+}
+
+a:link ,a:visited ,a:active{
+    text-decoration: none;
+    color: #ECFBFF;
+}
+
+.none{
+    display: none;
+}
+
+.conetenedor-cards{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 25px;
+    column-gap: 80px;
+    grid-template-rows: repeat(2,1fr);
+    margin-left: 150px;
+    margin-right: 150px;
+    margin-top: 20px;
+    height: 90%;
+    padding-bottom: 30px;
+}
+
+.tarjeta{
+    background-color: #EFEFEF;
+    box-sizing: border-box;
+    overflow: hidden;
+    background-image: url("/assets/fondo-targetas.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-position-x: 1px;
+}
+
+.tarjeta:hover{
+    cursor: pointer;
+}
+
+.imagen-back{
+    background-image: url("/assets/fondo-targetas.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.img-tarjeta{
+    background-color: white !important;
+    max-width: 100px;
+    height: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 50px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin-top: 20px;
+}
+
+.imagen{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+}
+
+.contenedor-informacion{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 49%;
+    margin-top: 10%;
+}
+
+.informacion-producto{
+    background-color: #184E5D;
+    width: 100%;
+    height: 100px;
+    margin: 0px 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #ECFBFF;
+
+}
+
+.pie-pagina{
+    background-color: #184E5D;
+    height: 3%;
+}

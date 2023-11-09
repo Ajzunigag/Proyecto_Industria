@@ -1,0 +1,102 @@
+<div class="contenedor">
+    <div class="navegacion ocultarP">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/">Inicio</a>
+            </div>
+            <div class="nav-r">
+                <a href="/Planes/">Nuestros Planes</a>
+            </div>
+            <div class="nav-r">
+                <a href="/Tiendas/">Tiendas</a>
+            </div>
+            
+            <div class="nav-r">
+                <a href="/usuarios/inicioUsuario">¿Cliente? Pase por acá</a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/login">¿Empresa? Vengase pa´ca</a>
+            </div>
+            <div class="nav-r">
+                <a href="/admin/login">¿Admin? Tu ven por acá</a>
+            </div>
+            
+            <div class="nav-r" *ngIf="logged==true">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navegacion ocultar">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="dropdown text-dark p-2" >
+                <button class="btn btn-warning dropdown-toggle " type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu
+                </button>
+                <ul class="dropdown-menu info">
+                    <div class="nav-r">
+                        <a href="/">Inicio</a>
+                    </div>
+                    <div class="nav-r">
+                        <a href="/Planes/">Nuestros Planes</a>
+                    </div>
+                    <div class="nav-r">
+                        <a href="/Tiendas/">Tiendas</a>
+                    </div>
+                    
+                    <div class="nav-r">
+                        <a href="/usuarios/inicioUsuario">¿Cliente? Pase por acá</a>
+                    </div>
+                    <div class="nav-r">
+                        <a href="/empresa/login">¿Empresa? Vengase pa´ca</a>
+                    </div>
+                    <div class="nav-r">
+                        <a href="/admin/login">¿Admin? Tu ven por acá</a>
+                    </div>
+                    
+                    <div class="nav-r" *ngIf="logged==true">
+                        <div>
+                            <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                        </div>
+                    </div>
+                </ul>
+              </div>
+
+            
+        </div>
+    </div>
+    <div class="contenido">
+        <div class="plan" *ngFor="let plan of planes">
+            <div>
+
+                <div class="nombre">
+                    <h2>{{plan.nombre}}</h2>
+                </div><br><br>
+                <div class="descripcion">
+                    {{plan.descripcion}}
+                </div>
+                <br>
+                <div class="maxArticulos">
+                    Artículos que podrás promocionar: {{plan.maxArticulos}}
+                </div>
+                <div class="maxArticulos">
+                    Acceso a estadísticas: {{plan.estadisticas}}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pie"><br></div>
+</div>

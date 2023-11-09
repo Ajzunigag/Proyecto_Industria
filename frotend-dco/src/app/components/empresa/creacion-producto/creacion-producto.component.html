@@ -1,0 +1,59 @@
+
+
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            
+        </div>
+    </div>
+    <div class="contenido-principal">
+        
+            <img class="logo-der" src="./assets/dco-favicon.png">
+            <span *ngIf="!permiteAgregar">No se pueden agregar mas art+iculos, edite o elimine los que ya tiene</span>
+            <div class="formulario" *ngIf="permiteAgregar">
+                <div class="titulo-formulario" >
+                    <h2 class="titulo">Publicar un producto</h2>
+                </div>
+                <div class="cuerpo-formulario">
+                    <form [formGroup]="productoForm" >
+                        <div class="entrada-contenedor3">
+                            <div class="visualizacion">
+                                <img [src]="img"  style="width: 100%;">
+                            </div>
+                            <div style="width: 100%;">
+                                <input formControlName="img" (change)="subir($event)"  type="file" class="form-control  rounded-pill text-bg-info" accept="image/*">
+                            </div>
+                            <br>
+                            
+                            <div class="anchoMax">
+                                <input type="text" placeholder="nombre" formControlName="nombre" class="entradat">
+                            </div>
+                            <div class="mt-2 anchoMax">
+                                <input type="number" placeholder="precio" formControlName="precio" class="entradat" min="0">
+                            </div>
+                            <div class="mt-2" style="width: 100%;">
+                                <label class="text-center">Seleccione una categoria</label>
+                                <select class="form-select entradat" placeholder="categoria"formControlName="categoria" aria-label="Default select example">
+                                    <option value=""> </option>
+                                    <option *ngFor="let cat of categorias"  [value]="cat">{{cat}}</option>
+                                  </select>
+                            </div>
+                            <div class="area-texto">
+                                <textarea class="area-texto" id="w3review" name="w3review"formControlName="descripcion" rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="btni" *ngIf="permiteAgregar">
+                                <input type="button" class="btn-formulario rounded-pill" value="PUBLICAR" (click)="agregarProducto($event)">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        
+    </div>
+    
+    <div class="pie-pagina">
+        
+    </div>
+</div>

@@ -1,0 +1,57 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            <div class="nav-l">
+                    <img class="logo" src="./assets/logo-lateral.png"><img>          
+            </div>
+            <div class="nav-c">
+                <div class="contenedor-formulario ">
+                    <form class="formulario">
+                            <div class="contenedor-search">
+                                <input class="buscador " type="search" placeholder="Buscar" aria-label="Search">
+                                <div style="padding-left: 0px;"> 
+                                    <button class="buscador-btn" type="submit"><img class="logo-search" src="./assets/search.svg"></button>
+                                </div>
+                                
+                            </div> 
+                    </form>
+                </div>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <a href="/usuarios">Iniciar Sesion</a>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <div class="contenido-principal">
+        <div class="container">
+            <div class="row">
+                    <div class="col-3 mt-4" style="width: 20%; " *ngFor="let producto of listProductos">
+                        <a href="/usuarios/verProducto/{{producto._id}}">
+                        <div class="card imagen-back" >
+                            <div class="img-tarjeta">
+                                <img class="imagen" src="{{producto.img}}">
+                            </div>
+                            <div class="contenedor-informacion">
+                                <div class="informacion-producto">
+                                    <div>
+                                        {{producto.nombre}}
+                                    </div>
+                                    <div>
+                                        {{producto.precio}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </a>  
+                    </div>  
+            </div>
+            
+        </div>
+    </div>
+    <div class="pie-pagina">
+        
+    </div>
+</div>

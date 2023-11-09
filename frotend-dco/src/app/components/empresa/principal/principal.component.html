@@ -1,0 +1,82 @@
+<div class="contenedor">
+    <div class="navegacion ocultarP">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/categorias">Categorías</a>
+            </div>
+           
+          
+            <div class="nav-r">
+                <a href="/empresa/Productos">Productos</a>
+            </div> <div class="nav-r">
+                <a href="/empresa/historial">Historial</a>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navegacion ocultar">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <div class="nav-r">
+                        <a href="/empresa/categorias">Categorías</a>
+                    </div>
+                   
+                  
+                    <div class="nav-r">
+                        <a href="/empresa/Productos">Productos</a>
+                    </div> <div class="nav-r">
+                        <a href="/empresa/historial">Historial</a>
+                    </div>
+                    <div class="nav-r">
+                        <div>
+                            <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                        </div>
+                    </div>
+                </ul>
+              </div>
+            
+        </div>
+    </div>
+
+    
+
+    <div class="contenido">
+        <div class="botones">
+            <a href="/empresa/actualizarInfo"><input class="btnPrincipal" type="button" value="ACTULIZAR INFO"></a>
+
+
+
+            <a href="/empresa/Productos"><input class="btnPrincipal" type="button"
+                    value="MANEJO DE PRODUCTOS"></a>
+
+           
+
+            <a href="/empresa/historial"><input class="btnPrincipal" type="button" value="HISTORIAL DE VENTAS"></a>
+            <a href="/empresa/categorias"><input class="btnPrincipal" type="button" value="CATEGORIAS"></a>
+            
+            <a *ngIf="estadisticas" href="/empresa/PrincipalEst"><input class="btnPrincipal" type="button" value="Estadisticas"></a>
+        </div>
+    </div>
+    <img *ngIf="logo" [src]="logo" alt="no disponible" class="logoEmpresa">
+    <div class="pie"><br></div>
+</div>
+
+

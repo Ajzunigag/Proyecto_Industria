@@ -1,0 +1,51 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <div class="elementoNav"><a href="/empresa/categorias">Categorías</a></div>
+            </div>
+            <div class="nav-r">
+                <div class="elementoNav"><a href="/empresa/Productos">Productos</a></div>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenido-principal">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 mt-4" style="width: 20%; " *ngFor="let producto of listProductos">
+                    <a href="/empresa/detalleProducto/{{producto._id}}">
+                        <div class="card imagen-back">
+                            <div class="img-tarjeta">
+                                <img class="imagen" src="{{producto.img}}">
+                            </div>
+                            <div class="contenedor-informacion">
+                                <div class="informacion-producto">
+                                    <div>
+                                        {{producto.nombre}}
+                                    </div>
+                                    <div>
+                                        {{producto.precio}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="pie-pagina">
+
+    </div>
+</div>

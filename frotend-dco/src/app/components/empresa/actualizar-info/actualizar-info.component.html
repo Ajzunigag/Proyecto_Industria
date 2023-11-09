@@ -1,0 +1,80 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/categorias">Categorías</a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/Productos">Productos</a>
+            </div> <div class="nav-r">
+                <a href="/empresa/historial">Historial</a>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenido">
+        <form class="actualizar" [formGroup]="actualizar" enctype="multipart/form-data" method="post">
+            <div class="titulo">
+                <h2>ACTUALIZAR INFORMACION DE LA EMPRESA</h2>
+            </div>
+            <div class="imagen">
+                <label for="formFile">AGREGAR LOGO</label>
+                <input formControlName="logo" (change)="subir($event)" type="file" class="form-control"
+                    aria-describedby="inputGroupFileAddon01" accept="image/*">
+                <br><br>
+            </div>
+            <div class="visualizacion">
+                <img [src]="archivo" [alt]="nombre?.value" style="width: 100%;">
+
+            </div>
+            <div class="nombre">
+                NOMBRE DE LA EMPRESA:
+            </div>
+            <div class="inputNombre">
+                <input formControlName="nombre" type="text" id="inputNombre">
+            </div>
+            <div class="correo">
+                CORREO DE LA EMPRESA:
+            </div>
+            <div class="inputCorreo">
+                <input formControlName="correo" type="email" name="" id="inputCorreo">
+            </div>
+            <div class="descripcion">
+                DESCRIPCION DE LA EMPRESA:
+            </div>
+            <div class="inputDescripcion">
+                <textarea formControlName="descripcion" id="inputDescripcion"></textarea>
+            </div>
+            <div class="cambiarContra">
+                CAMBIAR CONTRASEÑA:
+            </div>
+            <div class="inputContra">
+                <input formControlName="contrasena" type="password" id="inputContra">
+
+            </div>
+            <div class="confirmarContra">
+                CONFIRMAR CONTRASEÑA:
+            </div>
+            <div class="inputConfirmar">
+                <input formControlName="confirmar" type="password" id="inputConfirmar" (keyup)="validarContrasenas()">
+                <div class="error" *ngIf="!validarContras  && confirmar?.dirty">Las contraseñas no coinciden</div>
+                <div class="correcto" *ngIf="validarContras  && confirmar?.dirty">Las contraseñas coinciden</div>
+            </div>
+            <div class="btnGuardar">
+                <div *ngIf="!validarContras" class="error">Necesita confirmar la contraseña para poder actualizar los
+                    datos</div>
+                <input *ngIf="validarContras" type="button" value="ACTUALIZAR" (click)="actualizarInfo()">
+            </div>
+        </form>
+    </div>
+    <div class="pie-pagina"></div>
+</div>

@@ -1,0 +1,130 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/categorias">Categorías</a>
+            </div>
+            
+            <div class="nav-r">
+                <a href="/empresa/Productos">Productos</a>
+            </div> <div class="nav-r">
+                <a href="/empresa/historial">Historial</a>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenido-principal">
+        <div class="conetenedor-producto" [formGroup]="productoForm">
+            <div class="contenedor-img">
+                <img class="img-p" [src]="img" alt="">
+            </div>
+            <div class="caracteristicas">
+                <div class="nombre">
+                    <div id="nombre">
+                        <h5>Nombre: {{nombre}}</h5>
+                    </div>
+                </div>
+                <div class="descripcion">
+                    <div id="descripcion">
+                        <h5>Descripcion: {{descripcion}}</h5>
+                    </div>
+                </div>
+                <div class="precio">
+                    <div id="precio">
+                        <h5>Precio: {{precio}} $</h5>
+                    </div>
+                </div>
+                <div class="btnEditar">
+                    <h5><input id="btnEditar" type="button" value="Editar" data-bs-toggle="modal"
+                            data-bs-target="#modalActualizar"></h5>
+                </div>
+                <div class="btnEliminar">
+                    <h5><input id="btnEliminar" type="button" value="Eliminar" data-bs-toggle="modal"
+                            data-bs-target="#modalEliminar"></h5>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <img class="logo-der" src="./assets/dco-favicon.png">
+    <div class="pie-pagina">
+
+    </div>
+</div>
+
+<div class="modal fade" id="modalEliminar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                ¿Estás seguro en eliminar este producto?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="eliminar()" data-bs-dismiss="modal">Eliminar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalActualizar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar producto</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="place-self: center; text-align: -webkit-center;">
+                <form>
+                    <form [formGroup]="productoForm" >
+                        <div class="entrada-contenedor3">
+                            <div class="visualizacion">
+                                <img *ngIf="!archivo2" [src]="img"  style="width: 100%;">
+                                <img *ngIf="archivo2" [src]="archivo2" alt="esperando archivo" style="width: 100%;">
+                            </div>
+                            <div style="width: 100%;">
+                                <input formControlName="img" (change)="subir($event)"  type="file" class="form-control  rounded-pill text-bg-info" accept="image/*">
+                            </div>
+                            <br>
+                            
+                            <div class="anchoMax">
+                                <input type="text" placeholder="nombre" formControlName="nombre" class="entradat">
+                            </div>
+                            <div class="mt-2 anchoMax">
+                                <input type="number" placeholder="precio" formControlName="precio" class="entradat" min="0">
+                            </div>
+                            <div class="mt-2" style="width: 100%;">
+                                <label class="text-center">Seleccione una categoria</label>
+                                <select class="form-select entradat" placeholder="categoria"formControlName="categoria" aria-label="Default select example">
+                                    <option value=""> </option>
+                                    <option *ngFor="let cat of categorias"  [value]="cat">{{cat}}</option>
+                                  </select>
+                            </div>
+                            <div class="area-texto">
+                                <textarea class="area-texto" id="w3review" name="w3review"formControlName="descripcion" rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="btni">
+                                <input type="button" class="btn-formulario rounded-pill" (click)="actualiar()" value="ACTUALIZAR" data-bs-dismiss="modal">
+                            </div>
+                        </div>
+                        
+                    </form>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

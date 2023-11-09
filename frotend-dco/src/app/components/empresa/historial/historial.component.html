@@ -1,0 +1,117 @@
+<div class="contenedor">
+    <div class="navegacion ocultarP">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/categorias">Categorías</a>
+            </div>
+           
+          
+            <div class="nav-r">
+                <a href="/empresa/Productos">Productos</a>
+            </div> <div class="nav-r">
+                <a href="/empresa/historial">Historial</a>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navegacion ocultar">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <div class="nav-r">
+                        <a href="/empresa/categorias">Categorías</a>
+                    </div>
+                   
+                  
+                    <div class="nav-r">
+                        <a href="/empresa/Productos">Productos</a>
+                    </div> <div class="nav-r">
+                        <a href="/empresa/historial">Historial</a>
+                    </div>
+                    <div class="nav-r">
+                        <div>
+                            <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                        </div>
+                    </div>
+                </ul>
+              </div>
+            
+        </div>
+    </div>
+
+    <div class="contenido">
+        <div class="historial">
+            <div class="row" id="tituloTabla">
+                <div class="col-6" style="border-right: black 1px solid;">NOMBRE</div>
+                <div class="col-6">DETALLES</div>
+            </div>
+            <!--Este de abajo será el que se genere de forma dinamica segun una lista de los productos vendidos-->
+            <div class="row" id="contenidoTabla" *ngFor="let venta of historial">
+                <div class="col-6" id="nombreProducto">{{venta.nombre}}</div>
+                <div class="col-6" id="verDetalles">
+                    <button type="button" id="btnVerDetalles" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                        (click)="detalles(venta._id)">
+                        Ver detalles
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pie"><br></div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="exampleModalLabel">Detalle de la venta</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" style="display: grid">
+                <div>
+                    <h4>Detalles de la compra</h4>
+                    <div>
+                        Fecha: {{actual.fecha}}
+                    </div>
+                    <div>
+                        Nombre: {{actual.producto}}
+                    </div>
+                    <div>
+                        Precio: {{actual.precio}}$
+                    </div>
+                </div>
+                <div>
+                    <h4>Detalles del comprador</h4>
+                    <div>
+                        Nombre: {{actual.nombreComprador}}
+                    </div>
+                    <div>
+                        Correo: {{actual.correoComprador}}
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
+</div>

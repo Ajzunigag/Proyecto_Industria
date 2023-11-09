@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "@angular/cli": "^15.0.0"
+  }
+}
+
+//"dependencies": {
+  "@angular/cli": "^15.0.0",
+  // other dependencies
+} // 

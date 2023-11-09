@@ -1,0 +1,59 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/categorias">Categorías</a>
+            </div>
+
+            <div class="nav-r">
+                <a href="/empresa/Productos">Productos</a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/historial">Historial</a>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="contenido">
+        <div [formGroup]="formulario">
+            <label for="">Seleccione que grafico desea ver:
+                <select name="" id="" formControlName="grafico" (change)="mostrar()">
+                    <option value="gananciasXcat">Ganancias por cada categoría</option>
+                    <option value="top10">Top 10 productos mas vendidos</option>
+                    <option value="ventasXcat">Cantidad de productos vendidos por categoría</option>
+                    <option value="ventasXprod">Cantidad de productos vendidos</option>
+                </select>
+            </label>
+            <div *ngIf="getGrafico()=='gananciasXcat'">
+                <div>
+                    <app-ganancias-xcat></app-ganancias-xcat>
+                </div>
+            </div>
+            <div *ngIf="getGrafico()=='top10'">
+                <div>
+                    <app-top10-vendidos></app-top10-vendidos>
+                </div>
+            </div>
+            <div *ngIf="getGrafico()=='ventasXcat'">
+                <div>
+                    <app-ventas-xcat></app-ventas-xcat>
+                </div>
+            </div>
+            <div *ngIf="getGrafico()=='ventasXprod'">
+                <div>
+                    <app-ventas-xprod></app-ventas-xprod>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pie"><br></div>
+</div>

@@ -1,0 +1,70 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+
+        </div>
+    </div>
+    <div class="contenido-principal">
+
+        <img class="logo-der" src="./assets/dco-favicon.png">
+        <div class="formulario">
+            <div class="titulo-formulario">
+                <h2 class="titulo">Registro</h2>
+            </div>
+            <div class="cuerpo-formulario">
+                <form class="formulario-principal" [formGroup]="formulario">
+                    <div class="entrada-contenedor">
+                        <input class="entradat" type="text" placeholder="Nombre de tu tienda" formControlName="nombre">
+                        <div class="mensaje-err-1" *ngIf="nombre?.invalid && (nombre?.dirty || nombre?.touched)">Error,
+                            el
+                            campo es <strong>obligatorio</strong> </div>
+
+                    </div>
+                    <div class="entrada-contenedor">
+                        <input class="entradat" type="email" placeholder="correo electrónico" formControlName="correo"
+                            required>
+                        <div class="mensaje-err-1" *ngIf="correo?.invalid && (correo?.dirty || correo?.touched)">Error, el campo
+                            es
+                            obligatorio</div>
+                    </div>
+                    <div class="entrada-contenedor">
+                        <input class="entradat" type="password" placeholder="contraseña" formControlName="contrasena">
+                        <div class="mensaje-err-1"
+                            *ngIf="contrasena?.invalid && (contrasena?.dirty || contrasena?.touched)">
+                            Error, el
+                            campo es obligatorio</div>
+                    </div>
+                    <div class="entrada-contenedor" style="text-align: center;">
+                        <select class="entradat2" formControlName="plan" > 
+                            (change)="changeSelect()">
+                            <option *ngFor="let plan of planes" [value]="plan._id">{{plan.nombre}}</option>
+                        </select>
+                        <div class="mensaje-err-1" *ngIf="plan?.invalid && (plan?.dirty || plan?.touched)">Error, el
+                            campo es
+                            obligatorio</div>
+
+                    </div>
+                    <div class="entrada-contenedor2 entradat3">
+                        <a class="terminos-link"><input class="input-f" type="checkbox" formControlName="termino">
+                            Acepta los Terminos y Condiciones</a>
+                        <div class="mensaje-err-1" *ngIf="termino?.invalid && (termino?.dirty || termino?.touched)">
+                            Error, el campo es
+                            obligatorio</div>
+
+                    </div>
+                    <div class="entrada-contenedor">
+                        <button [disabled]="!formulario.valid" class="btn-formulario" type="button"
+                            (click)="buscar()">REGISTRARSE
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="pie-pagina">
+
+    </div>
+</div>

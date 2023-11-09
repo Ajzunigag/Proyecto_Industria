@@ -1,0 +1,72 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container-fluid">
+
+  <div class="row contenido">
+    <div class="row titulo">
+      <h3>Detalles Usuario</h3>
+    </div>
+    <div class="col-7 datosUsuario">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <td scope="col"></td>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Nombre</td>
+            <td>{{datosUsuario.nombre}}</td>
+          </tr>
+          <tr>
+            <td scope="row">ID</td>
+            <td>{{datosUsuario._id}}</td>
+          </tr>
+          <tr>
+            <td scope="row">Correo Electrónico</td>
+            <td>{{datosUsuario.correo}}</td>
+          </tr>
+          <tr>
+            <td scope="row">Tipo</td>
+            <td>{{datosUsuario.tipoUsuario}}</td>
+          </tr>
+          <tr>
+            <td scope="row">Contraseña</td>
+            <td>{{datosUsuario.contrasenia}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="row boton justify-content-center">
+      <button class="btn btn-success btnNuevo" data-bs-toggle="modal" data-bs-target="#modalEditar">Editar</button>
+    </div>
+  </div>
+
+</div>
+<div class="pie"><br></div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalEditar" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Editar usuario</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="datosUsuarioNuevo">
+          <label for="nombre">Nombre:</label>
+          <input type="text" class="form-control" formControlName="nombre">
+          <label for="correo">Correo:</label>
+          <input type="text" class="form-control" formControlName="correo">
+          <label for="contrasenia">Contraseña:</label>
+          <input type="text" class="form-control" formControlName="contrasenia">
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-primary" data-bs-dismiss="modal" (click)="editarUsuario()">Aceptar</button>
+      </div>
+    </div>
+  </div>
+</div>

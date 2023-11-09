@@ -1,0 +1,54 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            
+        </div>
+    </div>
+    <div class="contenido-principal">
+        
+            <img class="logo-der" src="./assets/dco-favicon.png">
+            <div class="formulario">
+                <div class="titulo-formulario">
+                    <h2 class="titulo">Registro</h2>
+                </div>
+                <div class="cuerpo-formulario">
+                    <form class="formulario-principal" [formGroup]="usuarioForm" (ngSubmit)="agregarUsuario()">
+                        <div class="entrada-contenedor">
+                            <input class="entradat" formControlName="nombre" type="text" placeholder="Nombre">
+                            <div class="mensaje-err-1" *ngIf="usuarioForm.get('nombre')?.hasError('required')&&usuarioForm.get('nombre')?.touched">
+                                
+                                <span>El nombre <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="entrada-contenedor">
+                            <input class="entradat" formControlName="email" type="email" placeholder="Corrreo Electronico">
+                            <div class="mensaje-err-1" *ngIf="usuarioForm.get('email')?.hasError('required')&&usuarioForm.get('email')?.touched">
+                                <span>El email <strong>es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="entrada-contenedor">
+                            <input class="entradat" formControlName="contraseña" type="password" placeholder="Contraseña">
+                            <div class="mensaje-err-1" *ngIf="usuarioForm.get('contraseña')?.hasError('required')&&usuarioForm.get('contraseña')?.touched">
+                                <span>La contraseña<strong> es obligatoria</strong></span>
+                            </div>
+                        </div>
+                        <div class="entrada-contenedor2 entradat3">
+                            <a class="terminos-link" ><input formControlName="terminos"  class="input-f" type="checkbox" placeholder="Nombre"> Acepta los Terminos y Condiciones</a>
+                            <div class="mensaje-err-1" *ngIf="!usuarioForm.get('terminos')?.value&&usuarioForm.get('terminos')?.touched">
+                                <span>Debe de aceptar los terminos y condiciones<strong> es obligatorio</strong></span>
+                            </div>
+                        </div>
+                        <div class="entrada-contenedor">
+                            <button  type="submit" [disabled]="usuarioForm.invalid" class="btn-formulario">Registrarse</button>
+                        </div>
+                    </form>
+                </div>
+                
+            </div>
+        
+    </div>
+    
+    <div class="pie-pagina">
+        
+    </div>
+</div>

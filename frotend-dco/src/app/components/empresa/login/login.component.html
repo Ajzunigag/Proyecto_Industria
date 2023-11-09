@@ -1,0 +1,45 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            
+        </div>
+    </div>
+    <div class="contenido-principal">
+        
+            <img class="logo-der" src="./assets/dco-favicon.png">
+            <div class="formulario">
+                <div class="titulo-formulario">
+                    <h2 class="titulo">Iniciar Sesión</h2>
+                </div>
+                <div class="cuerpo-formulario">
+                    <form class="formulario-principal" [formGroup]="infoLogin">
+                        
+                        <div class="entrada-contenedor">
+                            <input class="entradat" formControlName="correo" type="email" placeholder="Corrreo Electronico">
+                            <div class="mensaje-err-1" *ngIf="correo?.invalid && (correo?.dirty && correo?.touched)">Error, el campo es
+                                obligatorio</div>
+                        </div>
+                        <div class="entrada-contenedor">
+                            <input class="entradat" formControlName="contrasena" type="password" placeholder="Contraseña">
+                            <div class="mensaje-err-1" *ngIf="contrasena?.invalid && (contrasena?.dirty && contrasena?.touched)">Error, el
+                                campo es obligatorio</div>
+                        </div>
+                        <div class="entrada-contenedor">
+                            <a class="subtitulo" href="/empresa/registro" style="color: #0DC9FF;">¿No tienes una cuenta? Registrate pulsando aqui</a>
+                        </div>
+                        <div class="entrada-contenedor">
+                            <button class="btn-formulario" type="submit" (click)="login()">INGRESAR</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        
+    </div>
+    
+    <div class="pie-pagina">
+        
+    </div>
+</div>
+

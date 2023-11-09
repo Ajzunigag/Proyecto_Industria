@@ -1,0 +1,31 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="contenedor">
+  <div class="contenido ">
+    <div class="col-lg-8 text-center">
+      <div class="text-center bg-white">
+        <span>Lista de Planes</span>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Nombre</th>
+              <th scope="col">descripcion</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let plan of listaPlanes">
+              <th scope="row">{{plan._id}}</th>
+              <td>{{plan.nombre}}</td>
+              <td>{{plan.descripcion}}</td>
+              <td><button class="btn btnDetalles" routerLink="/admin/plan/{{plan._id}}">Detalles</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <button class="btn btnPlan" routerLink="/admin/nuevoPlan">Nuevo Plan</button>
+    </div>
+  </div>
+  <div class="pie"><br></div>
+</div>

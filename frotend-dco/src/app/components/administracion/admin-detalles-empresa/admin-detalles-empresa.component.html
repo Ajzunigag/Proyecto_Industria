@@ -1,0 +1,53 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container-fluid">
+  <div class="row contenido">
+    <div class="row titulo">
+      <h3>Detalles Empresa</h3>
+    </div>
+    <div class="col-7 datosUsuario">
+      <table class="table table-borderless">
+        <thead>
+          <tr>
+            <td scope="col"></td>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td scope="row">Nombre</td>
+            <td>{{datosEmpresa.nombre}}</td>
+          </tr>
+          <tr>
+            <td scope="row">ID</td>
+            <td>{{datosEmpresa._id}}</td>
+          </tr>
+          <tr>
+            <td scope="row">Correo Electrónico</td>
+            <td>{{datosEmpresa.correo}}</td>
+          </tr>
+          <tr>
+            <td scope="row">Estado</td>
+            <td *ngIf="datosEmpresa.activo">Activo</td>
+            <td *ngIf="!datosEmpresa.activo">Bloqueado</td>
+          </tr>
+          <tr>
+            <td scope="row">Descripción</td>
+            <td>{{datosEmpresa.descripcion}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="col-5 justify-content-center">
+      <div class="row justify-content-center">
+        <img class="fotoPerfil" src={{datosEmpresa.logo}} alt="">
+      </div>
+    </div>
+    <div class="row boton justify-content-center">
+      <button class="btn btn-success btnNuevo" (click)="eliminarEmpresa()">Eliminar</button>
+      <button *ngIf="activo" class="btn btn-success btnNuevo" (click)="bloquearEmpresa()">Bloquear</button>
+      <button *ngIf="!activo" class="btn btn-success btnNuevo" (click)="desbloquearEmpresa()">Desbloquear</button>
+    </div>
+  </div>
+
+</div>
+<div class="pie"><br></div>

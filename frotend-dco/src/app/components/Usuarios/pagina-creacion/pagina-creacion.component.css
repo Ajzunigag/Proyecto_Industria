@@ -1,0 +1,295 @@
+
+
+.input-file{
+    width: 100%;
+    height: 0;
+    border-style: #f0f2f7;
+    background: gray ;
+
+}
+
+.desborde{
+    overflow: hidden;
+}
+
+.input-file [type=file]{
+    cursor: inherit;
+    display: block;
+    font-size: 999px;
+    filter: alpha(opacity=0);
+    min-height: 100%;
+    min-width: 50%;
+    position: absolute;
+    right: 0;
+    text-align: right;
+    top: 0;
+    cursor: pointer;
+}
+
+.name-picture{
+    width: 100%;
+}
+
+.image{
+    
+    width: 100px;
+    height: 100px;
+}
+
+.ancho{
+    width: 50vh;
+    height: 50vh;
+}
+
+.contenedor{
+    background-color: #ECFBFF;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.navegacion{
+    background-color: #184E5D;
+    flex: 1;
+}
+
+.contenido-principal{
+    background-color: #ECFBFF;
+    display: flex;
+    height: 90vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-nav{
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    align-items: center;
+}
+
+
+a:link ,a:visited ,a:active{
+    text-decoration: none;
+    color: #ECFBFF;
+}
+
+.none{
+    display: none;
+}
+
+
+
+
+.pie-pagina{
+    background-color: #184E5D;
+    flex: 1;
+}
+
+.logo-der{
+    width: 140px;
+    height: 170px;
+    position: absolute;
+    bottom: 10%;
+    right: 10%;
+}
+
+.anchoMax{
+    width: 100%;
+}
+
+
+
+.formulario{
+    background-color: #FFFFFF;
+    height: 85%;
+    width: 80%;
+    box-shadow: -3px 3px 8px #184e5d;
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    margin-left: 50px;
+    
+}
+.visualizacion{
+    margin-bottom: 10px;
+}
+.titulo-formulario{
+ flex: 1;
+ margin: 0px 15px;
+ height: 100%;
+ display: flex;
+ align-items: flex-end;
+}
+
+.cuerpo-formulario{
+    flex: 6;
+    margin: 12px 15px;
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+
+
+.titulo{
+    
+    color: #0DC9FF;
+}
+
+.subtitulo{
+    margin: 0;
+    color: #0DC9FF;
+}
+.subtitulo:hover{
+    cursor: pointer;
+}
+
+.subtitulo:visited{
+    color: #0DC9FF;
+}
+
+.entrada{
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.entrada2{
+    width: 80%;
+}
+
+.terminos{
+    display: flex;
+}
+
+
+
+.entrada-contenedor{
+    flex: 2;
+    width: 80%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.entrada-contenedor3{
+    flex: 2;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    flex-direction: column;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.formulario-principal{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.entradat{
+    width: 96%;
+    height: 100%;
+    font-size: large;
+    font-weight: 600;
+    border-radius: 15px;
+    border: 1px solid rgba(97, 97, 97, 0.527);
+    padding-left: 10px;
+}
+
+.entradat::placeholder{
+    color: #00374648;
+}
+
+.entradat2{
+    width: 100%;
+    height: 100%;
+    font-size: large;
+    font-weight: 600;
+    background-color: #fff;
+    color: #00374648;
+    border-radius: 15px;
+    border: 1px solid rgba(97, 97, 97, 0.527);
+    padding-left: 10px;
+}
+
+
+.entradat2:focus-visible{
+    border: none;
+}
+.entradat3{
+    margin-left:auto;
+    margin-right: auto;
+}
+
+.opciones{
+    background-color: #bdf1ff88;
+    color: #000000;
+}
+
+.opciones:hover{
+    background-color: #0DC9FF;
+}
+
+
+.terminos-link:hover{
+    cursor: pointer;
+}
+
+.terminos-link{
+    color: #0DC9FF;
+}
+
+.input-f{
+    background-color: #184E5D;
+}
+
+.btn-formulario{
+    width: 100%!important;
+    height: 100%;
+    background-color: #184E5D;
+    color: #ECFBFF;
+}
+.area-texto{
+    width: 100%;
+    text-align: justify;
+    margin-bottom: 25px;
+    height: 20vh;
+}
+
+.area-texto2{
+    width: 100%;
+    text-align: justify;
+    margin-top: 5px;
+}
+
+.area-textoInterno{
+    width: 100%;
+    text-align: justify!important;
+}
+
+.btni{
+    width: 100%;
+    margin-top: 15px;
+    border-radius: 15px;
+}
+
+.pie-formulario{
+    flex: 1;
+    margin: 12px 15px;
+    height: 100%;
+}
+
+.mensaje-err-1{
+    color: crimson;
+    text-align: center;
+    
+}

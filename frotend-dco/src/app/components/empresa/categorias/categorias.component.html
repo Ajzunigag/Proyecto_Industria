@@ -1,0 +1,154 @@
+<div class="contenedor">
+    <div class="navegacion ocultarP">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/categorias">Categorías</a>
+            </div>
+           
+          
+            <div class="nav-r">
+                <a href="/empresa/Productos">Productos</a>
+            </div> <div class="nav-r">
+                <a href="/empresa/historial">Historial</a>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="navegacion ocultar">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/empresa/principal" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-warning dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Menu
+                </button>
+                <ul class="dropdown-menu">
+                    <div class="nav-r">
+                        <a href="/empresa/categorias">Categorías</a>
+                    </div>
+                   
+                  
+                    <div class="nav-r">
+                        <a href="/empresa/Productos">Productos</a>
+                    </div> <div class="nav-r">
+                        <a href="/empresa/historial">Historial</a>
+                    </div>
+                    <div class="nav-r">
+                        <div>
+                            <input class="btnCerrarSesion" type="button" value="Cerrar Sesión" (click)="cerrarSesion()">
+                        </div>
+                    </div>
+                </ul>
+              </div>
+            
+        </div>
+    </div>
+
+    <div class="contenido">
+        <div class="botones">
+            <button type="button" class="btnPrincipal" data-bs-toggle="modal" data-bs-target="#modalAggCategoria">
+                AGREGAR CATEGORÍA
+            </button>
+            <button type="button" class="btnPrincipal" data-bs-toggle="modal" data-bs-target="#modalEditCategoria"
+                (click)="cargarSelectEditar()">
+                EDITAR CATEGORÍA
+            </button>
+            <button type="button" class="btnPrincipal" data-bs-toggle="modal" data-bs-target="#modalDelCategoria" (click)="cargarSelectEliminar()">
+                ELIMINAR CATEGORÍA
+            </button>
+        </div>
+    </div>
+    <img *ngIf="logo" [src]="logo" alt="no disponible" class="logoEmpresa">
+    <div class="pie"><br></div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalAggCategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Agregar categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" [formGroup]="agregarForm">
+                    <label for="categoria">Ingrese la nueva categoría de productos</label><input type="text"
+                        class="form-control" formControlName="categoria">
+                    <div class="error">Campo requerido</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" (click)="agregar()" *ngIf="agregarForm.valid"
+                    data-bs-dismiss="modal">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal -->
+<div class="modal fade" id="modalEditCategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Editar categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" [formGroup]="editForm">
+                    <label for="select">Seleccione cual categoría quiere editar</label>
+                    <select class="form-control" formControlName="seleccionado">
+                        <option *ngFor="let cat of categorias" [value]="cat">{{cat}} </option>
+                    </select>
+                    <label for="categoria" *ngIf="editForm.get('seleccionado')?.valid">Ingrese el nuevo nombre de la
+                        categoría <input type="text" class="form-control" formControlName="categoria"> </label>
+                    <div class="error" *ngIf="editForm.get('seleccionado')?.valid">Campo requerido</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" *ngIf="editForm.valid" (click)="editar()"
+                    data-bs-dismiss="modal">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="modalDelCategoria" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Eliminar categoria</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form action="" [formGroup]="delForm">
+                    <select class="form-control" formControlName="categoria">
+                        <option *ngFor="let cat of categorias" [value]="cat">{{cat}} </option>
+                    </select>
+                    <div class="error">Campo requerido</div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" class="btn btn-primary" *ngIf="delForm.valid"
+                    data-bs-dismiss="modal" (click)="eliminar()" >Borrar</button>
+            </div>
+        </div>
+    </div>
+</div>

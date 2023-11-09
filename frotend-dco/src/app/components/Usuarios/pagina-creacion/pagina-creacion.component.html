@@ -1,0 +1,95 @@
+
+<div  [innerHTML]="cssStr | pipe" class="azul">
+</div>
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+        </div>
+    </div>
+    <div class="contenido-principal">
+        
+            <img class="logo-der" src="./assets/dco-favicon.png">
+            <div class="formulario">
+                <div class="titulo-formulario">
+                    <h2 class="titulo">Publicar un producto</h2>
+                </div>
+                <div class="cuerpo-formulario">
+                    <form [formGroup]="paginaForm" >
+                        <div class="entrada-contenedor3">
+                            <div  class="area-texto" #asTitle id="title">
+                                <label>html</label>
+                                <textarea class="area-texto" id="editor" name="w3review"formControlName="html" rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="area-texto">
+                                <label>css</label>
+                                <textarea class="area-texto" id="w3review" name="w3review"formControlName="css" rows="4" cols="50"></textarea>
+                            </div>
+                            <div class="area-texto">
+                                <label>javascript</label>
+                                <textarea class="area-texto" id="w3review" name="w3review"formControlName="javascript" rows="4" cols="50"></textarea>
+                            </div>
+
+                            <div style="width: 100%;">
+                                <input formControlName="img1" (change)="subir($event)"  type="file" class="form-control  rounded-pill text-bg-info" accept="image/*">
+                            </div>
+                            <div style="width: 100%;">
+                                <input formControlName="img2" (change)="subir2($event)"  type="file" class="form-control  rounded-pill text-bg-info" accept="image/*">
+                            </div>
+                            <div style="width: 100%;">
+                                <input formControlName="img3" (change)="subir3($event)"  type="file" class="form-control  rounded-pill text-bg-info" accept="image/*">
+                            </div>
+                            <div class="area-texto2">
+                                <label>empresaId</label>
+                                <input class="number" formControlName="empresaId">
+                            </div>
+                            <div class="btni">
+                                <input  type="button" (click)="agregarPagina()" class="btn-formulario rounded-pill" value="PUBLICAR" >
+                            </div>
+                        </div>
+                        
+                    </form>
+                </div> 
+            </div>
+            <!--
+            <div class="formulario">
+                <div class="titulo-formulario">
+                    <h2 class="titulo">Ver su pagina</h2>
+                </div>
+                <div class="cuerpo-formulario">
+                    <form [formGroup]="paginaForm" >
+                        <div class="entrada-contenedor3">
+                            
+                            <div   class="area-texto">
+                                <label>html</label>
+                                <div   [innerHtml]="htmlStr" class="azul">
+                                </div>
+                            </div>
+                            <div class="area-texto">
+                                <label>css</label>
+                                <div>
+                                    {{css}}
+                                </div>
+                            </div>
+                            <div class="area-texto">
+                                <label>javascript</label>
+                                <div>
+                                    {{javascript}}
+                                </div>
+                            </div>
+                            <div class="btni">
+                                <input  type="button" (click)="renderizarPagina()" class="btn-formulario rounded-pill" value="PUBLICAR" >
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            -->
+    </div>
+    
+    <div class="pie-pagina">
+        
+    </div>
+    
+</div>
+
+

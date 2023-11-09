@@ -1,0 +1,92 @@
+<div [innerHTML]="cssStr | pipe">
+
+</div>
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            
+        </div>
+    </div>
+    <div class="contenido-principal">
+        
+            <img class="logo-der" src="./assets/dco-favicon.png">
+            <div class="formulario">
+                <div class="izquierdo">
+                    <div class="form-titulo">
+                        <h5>Resumen del Pedido</h5>
+                    </div>
+                    <div class="form-productos">
+                        <div class="contendor-de-productos" >
+                            <div class="form-producto" *ngFor="let productoCarrito of carrito;let indice=index" >
+                                <div class="producto-info-1">
+                                    <img  class="imagen-producto"  src="{{productoCarrito.img}}">
+                                </div>
+                                <div class="producto-info-2">
+                                    <p class="descripcion-t">{{productoCarrito.nombre}}</p>
+                                    <p class="descripcion">{{productoCarrito.des}}</p>
+                                </div>
+                                <div class="producto-info-3">
+                                    <p class="correccion-espaciado">{{productoCarrito.precio}} LPS</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                    </div>
+                    <div class="form-detalles">
+                        <div class="info-1">
+                            <h6>Catidad de productos</h6>
+                            <h6>sub-total</h6>
+                            <h6 class="correccion-parrafo-Total-Info">Total</h6>
+                        </div>
+                        <div class="info-3">
+                            <p class="correccion-parrafo">{{cantidadProductos}}</p>
+                            <p class="correccion-parrafo"> {{subTotal}}.00 LPS</p>
+                            <p class="correccion-parrafo-Total"> {{Total}}.00 LPS</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="derecho">
+                    <form class="formulario-principal" [formGroup]="compraForm" >
+                        
+                        
+                        <div class="entrada-contenedor2 ">
+                            <img class="imagen path" src="../../../../assets/visa.svg">
+                        </div>
+                        <div class="entrada-contenedor ">
+                            <label for="">Numero de tarjeta</label>
+                            <input class="entradat" formControlName="numero" type="number" placeholder="Id Targeta">
+                        </div>
+                        <div class="entrada-contenedor ">
+                            <label for="">Titular de la tarjeta</label>
+                            <input class="entradat" formControlName="nombre" type="text" placeholder="Nombre Titular">
+                        </div>
+                        <div class="entrada-contenedor3 ">
+                            <div>
+                                <label for="">Fecha Expiracion</label>
+                                <input class="entradat" formControlName="fechaExp" type="date" placeholder="Fecha">
+                            </div>
+                            <div>
+                                <label for="">CVC</label>
+                                <input class="entradat" formControlName="cvc" type="number" placeholder="Firma Digital" >
+                            </div>
+                        </div>
+                        <div class="entrada-contenedor-btn ">
+                            <button   type="submit" (click)="(comprar())" [disabled]="compraForm.invalid" class="btn-formulario">Confirmar Compra</button>
+                        </div>
+                        
+                    </form>
+                </div>
+                
+            </div>
+        
+    </div>
+    
+    <div class="pie-pagina">
+        
+    </div>
+</div>
+
+
+

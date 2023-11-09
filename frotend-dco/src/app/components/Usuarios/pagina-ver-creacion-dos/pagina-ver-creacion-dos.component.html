@@ -1,0 +1,103 @@
+
+
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            <div class="nav-l" style="text-align: center;">
+                <a class="navbar-brand" href="/" style="width: 50%;">
+                    <img class="logo" src="./assets/logo-lateral.png" style="width: 100%;"><img>
+                </a>
+            </div>
+            <div class="nav-r">
+                <a href="/">Inicio</a>
+            </div>
+            <div class="nav-r">
+                <a href="/Planes/">Nuestros Planes</a>
+            </div>
+            <div class="nav-r">
+                <a href="/Tiendas/">Tiendas</a>
+            </div>
+            <div class="nav-r">
+                <a href="/usuarios/inicioUsuario">¿Cliente? Pase por acá</a>
+            </div>
+            <div class="nav-r">
+                <a href="/empresa/login">¿Empresa? Vengase pa´ca</a>
+            </div>
+            <div class="nav-r">
+                <a href="/admin/login">¿Admin? Tu ven por acá</a>
+            </div>
+        </div>
+    </div>
+    <div class="contenido-principal">
+        <div class="conetenedor-producto" [formGroup]="productoForm">
+            <div class="contenedor-img">
+                <div class="img-producto">
+                    <div class="img-p">
+                        <img class="img" formControlName="img" src="{{img}}">
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="caracteristicas">
+                <div class="contenido-p">
+                    <p class="p-titulo" formControlName="nombre">{{nombre}} {{precio}}L</p>
+                    <p>
+                     {{descripcion}}
+                    </p>
+                    
+                </div>
+                <div class="agregar"  *ngIf="logged==true">
+                    
+                    <button type="button " (click)="carritoCompras()" class="btn btn-info boton-agregar">Agregar al Carrito</button>
+                    
+                    
+                </div>
+                
+            </div>
+            <img class="logo-der" src="./assets/dco-favicon.png">
+        </div>
+        
+    </div>
+    
+    <div class="pie-pagina">
+        
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Estos son tus productos listos para comprar :)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Producto</th>
+                            <th scope="col">Costo</th>
+                            <th scope="col">Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let productoCarrito of carrito2;let indice=index">
+                            <th scope="row">{{indice+1}} </th>
+                            <td>{{productoCarrito.nombre}}</td>
+                            <td>{{productoCarrito.precio}}</td>
+                            <td><button type="button " (click)="(eliminarProductoCarrito(indice+1))"
+                                    class="btn btn-danger ">Eliminar</button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-dark" data-bs-dismiss="modal">Cerrar</button>
+                <button type="button" routerLink="/usuarios/pago/realizar-compra" data-bs-dismiss="modal"
+                    class="btn btn-info boton-comprar">Comprar</button>
+            </div>
+        </div>
+    </div>
+</div>

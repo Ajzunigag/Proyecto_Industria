@@ -1,0 +1,29 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="contenedor">
+  <div class="contenido">
+    <div class="col-lg-8 text-center">
+      <div class="text-center bg-white">
+        <span>Lista de Empresas</span>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">ID</th>
+              <th scope="col">Tipo de plan</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let empresa of listaEmpresas">
+              <th scope="row">{{empresa.nombre}}</th>
+              <td>{{empresa._id}}</td>
+              <td>{{empresa.plan}}</td>
+              <td><button class="btn btnDetalles" routerLink="/admin/empresa/{{empresa._id}}">Detalles</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  <div class="pie"><br></div>
+</div>

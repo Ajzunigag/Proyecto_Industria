@@ -1,0 +1,49 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="container-fluid">
+
+  <div class="row contenido">
+    <div class="row titulo">
+      <h3>Registrar Usuario</h3>
+    </div>
+    <div class="col-7 datosUsuario">
+      <form [formGroup]="formularioUsuario">
+        <table class="table table-borderless">
+          <thead>
+            <tr>
+              <td scope="col"></td>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td scope="row">Nombre</td>
+              <td><input class="datoUsuario" formControlName="nombre" type="text"></td>
+            </tr>
+            <tr>
+              <td scope="row">Tipo usuario</td>
+              <td>
+                <select name="Tipo Usuario" class="datoUsuario" formControlName="tipoUsuario">
+                  <option value="Usuario">Usuario</option>
+                  <option value="Administrador">Administrador</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td scope="row">Correo Electrónico</td>
+              <td><input class="datoUsuario" formControlName="correo" type="text"></td>
+            </tr>
+            <tr>
+              <td scope="row">Contraseña</td>
+              <td><input class="datoUsuario" formControlName="contrasenia" type="text"></td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+      <div class="row boton justify-content-center">
+        <button class="btn btn-success btnNuevo" (click)="agregarUsuario()">Registrar</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="pie"><br></div>

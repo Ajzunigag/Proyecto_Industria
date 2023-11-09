@@ -1,0 +1,30 @@
+<app-admin-navbar></app-admin-navbar>
+<div class="contenedor">
+  <div class="contenido">
+    <div class="col-lg-8 text-center">
+      <div class="text-center bg-white">
+        <span>Lista de Usuarios</span>
+        <table class="table table-striped">
+          <thead>
+            <tr>
+              <th scope="col">Nombre</th>
+              <th scope="col">ID</th>
+              <th scope="col">Tipo de usuario</th>
+              <th scope="col"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let usuario of listaUsuarios">
+              <th scope="row">{{usuario.nombre}}</th>
+              <td>{{usuario._id}}</td>
+              <td>{{usuario.tipoUsuario}}</td>
+              <td><button class="btn btnDetalles" routerLink="/admin/usuario/{{usuario._id}}">Detalles</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <button class="btn btnUsuario" routerLink="/admin/nuevoUsuario">Nuevo Usuario</button>
+    </div>
+  </div>
+  <div class="pie"><br></div>
+</div>

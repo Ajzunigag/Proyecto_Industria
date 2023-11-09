@@ -1,0 +1,83 @@
+<div class="contenedor">
+    <div class="navegacion">
+        <div class="contenedor-nav">
+            <div class="nav-l">
+                    <img class="logo" src="./assets/logo-lateral.png"><img>          
+            </div>
+            <div class="nav-c">
+                <div class="contenedor-formulario ">
+                    <form class="formulario">
+                            <div class="contenedor-search">
+                                <input class="buscador " type="search" placeholder="Buscar" aria-label="Search">
+                                <div style="padding-left: 0px;"> 
+                                    <button class="buscador-btn" type="submit"><img class="logo-search" src="./assets/search.svg"></button>
+                                </div>
+                                
+                            </div> 
+                    </form>
+                </div>
+            </div>
+            <div class="nav-r">
+                <div>
+                    <a href="/usuarios">Iniciar Sesion</a>
+                    
+                </div>
+                <a href="/usuarios/verProducto1">
+                    <svg class="back" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M256 0C114.6 0 0 114.6 0 256c0 141.4 114.6 256 256 256s256-114.6 256-256C512 114.6 397.4 0 256 0zM384 288H205.3l49.38 49.38c12.5 12.5 12.5 32.75 0 45.25s-32.75 12.5-45.25 0L105.4 278.6C97.4 270.7 96 260.9 96 256c0-4.883 1.391-14.66 9.398-22.65l103.1-103.1c12.5-12.5 32.75-12.5 45.25 0s12.5 32.75 0 45.25L205.3 224H384c17.69 0 32 14.33 32 32S401.7 288 384 288z"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="contenido-principal">
+        <div class="conetenedor-producto" [formGroup]="productoForm">
+            <div class="contenedor-img">
+                <div class="img-producto">
+                    <div class="img-p">
+                        <img class="img" formControlName="img" src="{{img}}">
+                    </div>
+                    
+                </div>
+                <div class="info-vendedor">
+                    <div>
+                        <span class="titulo">Vendedor: </span> <span class="subtitulo" >{{vendedor}}</span>
+                    </div>
+                    <div>
+                        <span class="titulo">Calificacion: </span> <span class="subtitulo">4.2</span>
+                    </div>
+                    <div>
+                        <span class="titulo">Calificar: </span> 
+                        <select class="subtitulo">
+                            <option class="opcion">1</option>
+                            <option class="opcion">2</option>
+                            <option class="opcion">3</option>
+                            <option class="opcion">4</option>
+                            <option class="opcion">5</option>
+                        </select>
+                           
+                      
+                    </div>
+                </div>
+            </div>
+            <div class="caracteristicas">
+                <div class="contenido-p">
+                    <p class="p-titulo" formControlName="nombre">{{nombre}} {{precio}}L</p>
+                    <p>
+                     {{descripcion}}
+                    </p>
+                </div>
+                
+            </div>
+            <div class=" comentario">
+                <div class="comentario-c">
+                    <textarea class="comentario-input"></textarea>
+                </div>
+            </div>
+            <img class="logo-der" src="./assets/dco-favicon.png">
+        </div>
+        
+    </div>
+    
+    <div class="pie-pagina">
+        
+    </div>
+</div>
