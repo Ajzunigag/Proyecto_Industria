@@ -1,6 +1,7 @@
 {
   "dependencies": {
     "@angular/cdk": "^16.2.11",
-  "@angular/common": "^16.2.11"
+    "@angular/common": "^16.2.11",
+    "mongoose": "^8.0.0"
   }
 }
