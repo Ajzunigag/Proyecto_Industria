@@ -10,7 +10,6 @@ const app = express();
 //Conectamos a la DB
 
 app.use(cors());
-conectarDB()
 
 
 //Middleware
